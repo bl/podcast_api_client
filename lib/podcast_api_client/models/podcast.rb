@@ -1,11 +1,12 @@
 module PodcastApiClient
   module V1
-    class User
+    class Podcast
       include Her::JsonApi::Model
       uses_api PodcastApiClient::V1.api
 
-      has_many :podcasts
-      has_many :articles
+      belongs_to :user
+
+      has_many :timestamps
     end
   end
 end

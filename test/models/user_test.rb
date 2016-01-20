@@ -26,20 +26,24 @@ class UserTest < ActiveSupport::TestCase
  
 #   def test_find_should_return_stored_user_by_user_id
 #     stub_api_for(PodcastApiClient::V1::User) do |stub|
-#       stub.get("/users/3") { |env| [200, {},
-#         {"id":"3","type":"users","attributes":{"name":"Mrs. Michel Metz","email":"user-2@example.com","created_at":"2016-01-15T02:33:52.134Z","updated_at":"2016-01-15T02:33:52.134Z"},"relationships":{"podcasts":{"data":[]}}}.to_json]
+#       stub.get("/users/3") { |env| [200, {}, {data:[
+#                                     {id:5,type:"users",attributes:{name:"Roma O'Keefe",email:"user-4@example.com",created_at:"2016-01-15T02:33:52.427Z",updated_at:"2016-01-15T02:33:52.427Z"},relationships:{podcasts:{data:[]}}}]}.to_json]
 #       }
-#       stub.get("/users/4") { |env| [403, {},
-#         [{status: 403, detail: "Invalid user"}].to_json] 
+#       stub.get("/users/4") { |env| [403, {}, {Errors: [
+#         {id: "user", status: 403, detail: "is invalid"}]}.to_json] 
 #       }
 #     end
 # 
-#     assert_equal "user-2@example.com", PodcastApiClient::V1::User.find(3).email
+#     assert_equal "user-4@example.com", PodcastApiClient::V1::User.find(3).email
+#     debugger
 #   end
  
    # CREATE (via .create())
    
-#  def test_create_should_return_created_item_on_valid_create
+#  test "create should return created item on valid create" do
+#    stub_api_for(PodcastApiClient::V1::User) do |stub|
+#      stub.get("/users/1") { |env| [200, {}, {data: [{id: 1, type: 'users', attributes: {name: 'Chris Rock'}}] }.to_json ] }
+#    end
 #  end
 
 end
