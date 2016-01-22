@@ -4,9 +4,10 @@
 </div>
 <div class="col-md-8">
   <section class="podcasts">
-    <p> podcasts go here</p>
-    <%= @podcasts %>
-    <%= @users %>
+    <h2><%= @podcasts.count %> Podcasts</h2>
+    <ul class="podcasts">
+      <%= render @podcasts %>
+    </ul>
   </section>
 </div>
 <div class="col-md-4">
