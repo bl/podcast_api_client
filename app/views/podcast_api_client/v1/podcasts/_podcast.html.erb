@@ -1,5 +1,5 @@
 <li id="podcast-<%= podcast.id %>">
   <a href="#"><span class="title"><%= podcast.title %></span></a>
   <span class="timestamp">Posted <%= time_ago_in_words(podcast.created_at) %> ago</span>
-  <span clas="user"><a href="#"><%= podcast.user.name %></a></span>
+  <span clas="user"><a href="#"><%= podcast.series %></a></span>
 </li>
